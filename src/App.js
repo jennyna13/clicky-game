@@ -3,6 +3,7 @@ import './App.css';
 import Card from "./components/Card";
 import Title from "./components/Title";
 import Wrapper from "./components/Wrapper";
+import Nav from "./components/Nav";
 import dogs from "./dogs.json";
 
 class App extends Component {
@@ -33,7 +34,7 @@ class App extends Component {
       else {
         this.setState({
           clickedArray:this.state.clickedArray.concat([id]),
-          socre:this.state.score + 1,
+          score:this.state.score + 1,
           message: "Correct!",
         });
       }
@@ -44,14 +45,17 @@ class App extends Component {
   render() {
     return (
       <Wrapper> 
-        <Title>Click on an image to earn points, but don't click on any more than once!</Title>
+        <Nav 
+          score = {this.state.score}
+          highscore={this.state.highscore}
+        />
+        <Title/>
         {this.state.dogs.map(dog => (
             <Card
             handleClick={this.handleClick}
             id= {dog.id}
             key={dog.id}
             image={dog.image}
-            score = {this.state.score}
             />
           ))}
     </Wrapper>
