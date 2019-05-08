@@ -1,3 +1,6 @@
+Memory game developed using React js library. User is displayed with images on screen. Player clicks on images to score but should not click on same image twice. Game restarts if player clicks on the same image twice.
+
+https://apricot-sundae-62434.herokuapp.com/
 
 <h1>Clicky Game</h1>
 
